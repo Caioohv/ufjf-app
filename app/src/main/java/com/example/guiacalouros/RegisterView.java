@@ -26,9 +26,9 @@ public class RegisterView extends AppCompatActivity {
         UserClass user;
 
         try {
-             user = new UserClass(0,edtNome.getText().toString(), edtCPF.getText().toString(), edtEmail.getText().toString(), edtSenha.getText().toString());
+             user = new UserClass(0,edtNome.getText().toString(), edtCPF.getText().toString(), edtEmail.getText().toString(), edtSenha.getText().toString(), false);
         } catch (Exception e) {
-             user = new UserClass(0,"error", "error", "error", "error");
+             user = new UserClass(0,"error", "error", "error", "error", false);
 
         }
 
@@ -43,7 +43,7 @@ public class RegisterView extends AppCompatActivity {
     }
 
     public void returnLogin(View view){
-        this.startActivity(new Intent(this, LoginView.class));
+        this.startActivity(new Intent(this, MainActivity.class));
     }
 
 }

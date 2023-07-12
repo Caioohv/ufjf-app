@@ -1,5 +1,18 @@
 package com.example.guiacalouros;
 
+
+class LoggedUser{
+    static int id = 0;
+    static String name;
+    static String email;
+
+    public LoggedUser(int Id, String name, String email){
+        id = Id;
+        LoggedUser.name = name;
+        LoggedUser.email = email;
+    }
+}
+
 public class UserClass {
 
     private int id;
@@ -11,13 +24,13 @@ public class UserClass {
 
     private Boolean approved;
 
-    public UserClass(int id, String name, String cpf, String email, String password) {
+    public UserClass(int id, String name, String cpf, String email, String password, boolean approved) {
         this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.email = email;
         this.password = password;
-        this.approved = false;
+        this.approved = approved;
     }
 
     public String getName() {

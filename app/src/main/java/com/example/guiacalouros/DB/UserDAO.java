@@ -5,9 +5,12 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 
+import com.example.guiacalouros.MainActivity;
 import com.example.guiacalouros.UserClass;
 
 import java.util.ArrayList;
@@ -78,7 +81,7 @@ public class UserDAO extends SQLiteOpenHelper {
                 String password = cursor.getString(4);
                 boolean approved = cursor.getInt(4) == 1 ? true : false;
 
-                UserClass user = new UserClass(userId,name, cpf, email, password );
+                UserClass user = new UserClass(userId,name, cpf, email, password, approved );
                 returnList.add(user);
 
             }while(cursor.moveToNext());
@@ -88,5 +91,30 @@ public class UserDAO extends SQLiteOpenHelper {
         cursor.close();
         db.close();
         return returnList;
+    }
+
+    public UserClass getUser(String cpf, String password){
+        Log.e("Select", cpf);
+        String queryString = "SELECT * FROM " + TABLE_NAME + " WHERE " + COLUMN_CPF + " = '" + cpf + "' AND PASSWORD = '" + password + "'";
+
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(queryString, null);
+        if(cursor.moveToFirst()){
+            int userId = cursor.getInt(0);
+            String cpfQuery = cursor.getString(1);
+            String email = cursor.getString(2);
+            String name = cursor.getString(3);
+            String passwordQuery = cursor.getString(4);
+            boolean approved = cursor.getInt(4) == 1 ? true : false;
+
+            UserClass user = new UserClass(userId,name, cpfQuery, email, passwordQuery, approved);
+            cursor.close();
+            db.close();
+            return user;
+        }else{
+            cursor.close();
+            db.close();
+            return null;
+        }
     }
 }

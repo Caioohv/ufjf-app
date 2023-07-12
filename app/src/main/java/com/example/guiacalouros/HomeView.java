@@ -6,19 +6,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class LoginView extends AppCompatActivity {
-
+public class HomeView extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+
+        setContentView(R.layout.activity_home);
     }
 
-    public void login(View view){
-
+    public void redirectUfjfPage(View view){
+        this.startActivity(new Intent(this, InfoUfjfView.class));
     }
 
-    public void redirectRegisterPage(View view){
-        this.startActivity(new Intent(this, RegisterView.class));
-    }
 }

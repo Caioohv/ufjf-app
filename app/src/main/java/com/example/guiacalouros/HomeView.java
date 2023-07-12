@@ -39,4 +39,8 @@ public class HomeView extends AppCompatActivity {
         this.startActivity(new Intent(this, InfoUfjfView.class));
     }
 
+    public void redirectClassroom(View view){
+        this.startActivity(new Intent(this, ClassroomsView.class));
+    }
+
 }

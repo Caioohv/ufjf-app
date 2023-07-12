@@ -36,6 +36,8 @@
             android:exported="false"/>
         <activity android:name=".HomeView"
             android:exported="false"/>
+        <activity android:name=".ClassroomsView"
+            android:exported="false"/>
 
 
         <meta-data

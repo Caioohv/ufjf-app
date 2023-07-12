@@ -8,8 +8,9 @@
 
     <LinearLayout
         android:id="@+id/linearLayout"
-        android:layout_width="411dp"
-        android:layout_height="591dp"
+        android:layout_width="0dp"
+        android:layout_height="574dp"
+        android:layout_marginTop="40dp"
         android:background="#5A161C"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -17,7 +18,7 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0">
+        app:layout_constraintVertical_bias="0.898">
 
         <TableRow
             android:id="@+id/tableInfo"
@@ -48,7 +49,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="105dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#5A161C"
                 app:srcCompat="@android:drawable/ic_menu_view" />
@@ -83,7 +84,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton2"
-                android:layout_width="105dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#5A161C"
                 app:srcCompat="@android:drawable/ic_menu_view" />
@@ -117,7 +118,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton3"
-                android:layout_width="105dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#5A161C"
                 app:srcCompat="@android:drawable/ic_menu_view" />
@@ -151,7 +152,7 @@
 
             <ImageButton
                 android:id="@+id/imageButton4"
-                android:layout_width="105dp"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="#5A161C"
                 app:srcCompat="@android:drawable/ic_menu_view" />
@@ -159,7 +160,7 @@
     </LinearLayout>
 
     <TableRow
-        android:layout_width="416dp"
+        android:layout_width="wrap_content"
         android:layout_height="96dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -181,8 +182,8 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName3"
-            android:layout_width="189dp"
-            android:layout_height="95dp"
+            android:layout_width="186dp"
+            android:layout_height="match_parent"
             android:background="#22080A"
             android:ems="10"
             android:inputType="textPersonName"
@@ -192,7 +193,7 @@
 
         <EditText
             android:id="@+id/editTextTextPersonName"
-            android:layout_width="109dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="#22080A"
             android:ems="10"
@@ -204,8 +205,8 @@
     </TableRow>
 
     <LinearLayout
-        android:layout_width="410dp"
-        android:layout_height="44dp"
+        android:layout_width="0dp"
+        android:layout_height="46dp"
         android:background="#5A161C"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="@+id/linearLayout"

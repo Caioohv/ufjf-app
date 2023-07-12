@@ -19,7 +19,7 @@ public class InfoUfjfView extends AppCompatActivity {
     }
 
     public void returnHome(View view){
-        this.startActivity(new Intent(this, MainActivity.class));
+        this.finish();
     }
 
     public void moreInformation(View view){

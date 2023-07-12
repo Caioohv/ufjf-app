@@ -131,16 +131,18 @@
 
     <TextView
         android:id="@+id/textView5"
-        android:layout_width="57dp"
-        android:layout_height="18dp"
+        android:layout_width="112dp"
+        android:layout_height="60dp"
+        android:onClick="logout"
         android:text="logout"
+        android:textAlignment="center"
         android:textColor="#FFFBFB"
-        android:textSize="12sp"
+        android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="@+id/toolbar"
         app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintHorizontal_bias="0.957"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/toolbar"
         app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:layout_constraintVertical_bias="0.109" />
+        app:layout_constraintVertical_bias="0.409" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

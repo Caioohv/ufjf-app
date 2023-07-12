@@ -28,6 +28,13 @@ public class HomeView extends AppCompatActivity {
         }
     }
 
+    public void logout(View view){
+        LoggedUser.id = 0;
+        LoggedUser.name = null;
+        LoggedUser.email = null;
+        this.startActivity(new Intent(this, MainActivity.class));
+    }
+
     public void redirectUfjfPage(View view){
 
         this.startActivity(new Intent(this, InfoUfjfView.class));

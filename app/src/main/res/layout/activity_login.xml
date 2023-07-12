@@ -38,7 +38,7 @@
         android:background="#E2DBDB"
         android:ems="10"
         android:inputType="text"
-        android:text="Name"
+        android:text="CPF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

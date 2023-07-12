@@ -5,11 +5,13 @@ class LoggedUser{
     static int id = 0;
     static String name;
     static String email;
+    static  String cpf;
 
-    public LoggedUser(int Id, String name, String email){
+    public LoggedUser(int Id, String name, String email, String cpf){
         id = Id;
         LoggedUser.name = name;
         LoggedUser.email = email;
+        LoggedUser.cpf = cpf;
     }
 }
 

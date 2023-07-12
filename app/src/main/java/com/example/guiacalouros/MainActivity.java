@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
             LoggedUser.id = result.getId();
             LoggedUser.name = result.getName();
             LoggedUser.email = result.getEmail();
+            LoggedUser.cpf = result.getCpf();
             Toast.makeText(MainActivity.this, "success", Toast.LENGTH_SHORT).show();
             this.startActivity(new Intent(this, HomeView.class));
         }else{

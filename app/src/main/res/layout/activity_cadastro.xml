@@ -4,6 +4,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFFF1"
     tools:context=".Cadastro">
+
+    <EditText
+        android:id="@+id/edtCPF"
+        style="@android:style/Widget.DeviceDefault.Light.EditText"
+        android:layout_width="257dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="text"
+        android:singleLine="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="177dp" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="257dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="322dp" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="397dp" />
+
+    <EditText
+        android:id="@+id/edtConfimaSenha"
+        android:layout_width="255dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:hint="Confirmar Senha"
+        android:inputType="textPassword"
+        tools:layout_editor_absoluteX="66dp"
+        tools:layout_editor_absoluteY="469dp" />
+
+    <Button
+        android:id="@+id/btnCadastro"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="302dp"
+        android:layout_height="64dp"
+        android:text="CADASTRAR"
+        android:textColor="#F9FDEF"
+        app:backgroundTint="#5A161C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="583dp" />
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="257dp"
+        android:layout_height="52dp"
+        android:ems="10"
+        android:hint="Nome Completo"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="251dp" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:layout_marginStart="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/back"
+        tools:layout_editor_absoluteY="45dp" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

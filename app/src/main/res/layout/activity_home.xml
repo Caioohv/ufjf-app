@@ -7,9 +7,10 @@
     android:background="#FBFFF1">
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/infoUfjf"
         android:layout_width="151dp"
         android:layout_height="127dp"
+        android:onClick="redirectUfjfPage"
         android:text="Informações UFJF"
         app:backgroundTint="#9A1414"
         app:cornerRadius="10dp"

@@ -4,6 +4,107 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FBFFF1"
     tools:context=".Cadastro">
+
+    <EditText
+        android:id="@+id/edtCPF"
+        style="@android:style/Widget.DeviceDefault.Light.EditText"
+        android:layout_width="257dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="CPF"
+        android:inputType="text"
+        android:singleLine="false"
+        app:layout_constraintBottom_toTopOf="@+id/edtNome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView5" />
+
+    <EditText
+        android:id="@+id/edtEmail"
+        android:layout_width="257dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="23dp"
+        android:ems="10"
+        android:hint="E-mail"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/edtSenha"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+
+    <EditText
+        android:id="@+id/edtSenha"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="22dp"
+        android:ems="10"
+        android:hint="Senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/edtConfimaSenha"
+        app:layout_constraintEnd_toEndOf="@+id/edtConfimaSenha"
+        app:layout_constraintStart_toStartOf="@+id/edtConfimaSenha"
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+    <EditText
+        android:id="@+id/edtConfimaSenha"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="66dp"
+        android:layout_marginEnd="66dp"
+        android:layout_marginBottom="64dp"
+        android:ems="10"
+        android:hint="Confirmar Senha"
+        android:inputType="textPassword"
+        app:layout_constraintBottom_toTopOf="@+id/btnCadastro"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
+
+    <Button
+        android:id="@+id/btnCadastro"
+        style="@style/Widget.Material3.Button.IconButton"
+        android:layout_width="302dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="160dp"
+        android:onClick="cadastroUser"
+        android:text="CADASTRAR"
+        android:textColor="#F9FDEF"
+        app:backgroundTint="#5A161C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtConfimaSenha" />
+
+    <EditText
+        android:id="@+id/edtNome"
+        android:layout_width="257dp"
+        android:layout_height="0dp"
+        android:layout_marginBottom="19dp"
+        android:ems="10"
+        android:hint="Nome Completo"
+        android:inputType="text"
+        app:layout_constraintBottom_toTopOf="@+id/edtEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.485"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edtCPF" />
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="36dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="45dp"
+        android:layout_marginBottom="96dp"
+        app:layout_constraintBottom_toTopOf="@+id/edtCPF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

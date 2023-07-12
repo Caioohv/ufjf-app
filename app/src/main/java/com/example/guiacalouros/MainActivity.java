@@ -9,6 +9,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        DatabaseConnection connection = new DatabaseConnection();
+//        connection.connect();
+
+        setContentView(R.layout.activity_home);
     }
 }

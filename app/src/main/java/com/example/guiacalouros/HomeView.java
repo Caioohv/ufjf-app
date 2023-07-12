@@ -34,9 +34,13 @@ public class HomeView extends AppCompatActivity {
         LoggedUser.email = null;
         this.startActivity(new Intent(this, MainActivity.class));
     }
+    public void perfil(View view){
+        Intent intent = new Intent(this,PerfilView.class);
+        startActivity(intent);
+
+    }
 
     public void redirectUfjfPage(View view){
-
         this.startActivity(new Intent(this, InfoUfjfView.class));
     }
 

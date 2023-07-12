@@ -21,6 +21,9 @@
             android:name=".RegisterView"
             android:exported="false" />
         <activity
+            android:name=".PerfilView"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" >
             <intent-filter>
@@ -33,6 +36,10 @@
             android:exported="false"/>
         <activity android:name=".HomeView"
             android:exported="false"/>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
     </application>
 
 </manifest>

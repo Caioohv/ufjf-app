@@ -76,9 +76,9 @@ public class UserDAO extends SQLiteOpenHelper {
             do{
                 int userId = cursor.getInt(0);
                 String cpf = cursor.getString(1);
-                String email = cursor.getString(2);
-                String name = cursor.getString(3);
-                String password = cursor.getString(4);
+                String name = cursor.getString(2);
+                String password = cursor.getString(3);
+                String email = cursor.getString(4);
                 boolean approved = cursor.getInt(4) == 1 ? true : false;
 
                 UserClass user = new UserClass(userId,name, cpf, email, password, approved );
@@ -102,9 +102,9 @@ public class UserDAO extends SQLiteOpenHelper {
         if(cursor.moveToFirst()){
             int userId = cursor.getInt(0);
             String cpfQuery = cursor.getString(1);
-            String email = cursor.getString(2);
-            String name = cursor.getString(3);
-            String passwordQuery = cursor.getString(4);
+            String name = cursor.getString(2);
+            String passwordQuery = cursor.getString(3);
+            String email = cursor.getString(4);
             boolean approved = cursor.getInt(4) == 1 ? true : false;
 
             UserClass user = new UserClass(userId,name, cpfQuery, email, passwordQuery, approved);

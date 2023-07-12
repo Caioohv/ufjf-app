@@ -2,10 +2,19 @@ package com.example.guiacalouros;
 
 public class GuiaUser {
     private String name;
-    private String Cpf;
+
     private String cpf;
     private String email;
     private String password;
+
+    public GuiaUser() {
+    }
+    public GuiaUser(String name, String cpf, String email, String password) {
+        this.name = name;
+        this.cpf = cpf;
+        this.email = email;
+        this.password = password;
+    }
 
     public String getName() {
         return name;
@@ -16,11 +25,11 @@ public class GuiaUser {
     }
 
     public String getCpf() {
-        return Cpf;
+        return cpf;
     }
 
     public void setCpf(String cpf) {
-        Cpf = cpf;
+        cpf = cpf;
     }
 
     public String getEmail() {

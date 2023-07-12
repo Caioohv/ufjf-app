@@ -37,6 +37,7 @@ public class RegisterView extends AppCompatActivity {
 
         if(success) {
             Toast.makeText(RegisterView.this, "Success", Toast.LENGTH_SHORT).show();
+            this.finish();
         }else{
             Toast.makeText(RegisterView.this, "failed", Toast.LENGTH_SHORT).show();
         }

@@ -11,84 +11,90 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-    <EditText
-        android:id="@+id/edtNome"
-        style="@style/EditTextStyle"
-        android:layout_width="275dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="200dp"
-        android:background="#E2DBDB"
-        android:text="Nome"
-        android:textStyle="bold"
-        android:bottomRightRadius="15dp"
-        android:bottomLeftRadius="15dp"
-        android:topLeftRadius="15dp"
-        android:topRightRadius="15dp"
-        app:guidelineUseRtl="false"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/edtNome"
+            style="@style/EditTextStyle"
+            android:layout_width="275dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="200dp"
+            android:background="#E2DBDB"
+            android:bottomLeftRadius="15dp"
+            android:bottomRightRadius="15dp"
+            android:hint="Nome"
+            android:textStyle="bold"
+            android:topLeftRadius="15dp"
+            android:topRightRadius="15dp"
+            app:guidelineUseRtl="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <EditText
-        android:id="@+id/edtEmail"
-        style="@style/EditTextStyle"
-        android:layout_width="275dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#E2DBDB"
-        android:text="Email"
-        android:textStyle="bold"
-        android:bottomRightRadius="15dp"
-        android:bottomLeftRadius="15dp"
-        android:topLeftRadius="15dp"
-        android:topRightRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtNome" />
+        <EditText
+            android:id="@+id/edtEmail"
+            style="@style/EditTextStyle"
+            android:layout_width="275dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:background="#E2DBDB"
+            android:bottomLeftRadius="15dp"
+            android:bottomRightRadius="15dp"
+            android:hint="Email"
+            android:textStyle="bold"
+            android:topLeftRadius="15dp"
+            android:topRightRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtNome" />
 
-    <EditText
-        android:id="@+id/edtCPF"
-        style="@style/EditTextStyle"
-        android:layout_width="275dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#E2DBDB"
-        android:text="CPF"
-        android:textStyle="bold"
-        android:bottomRightRadius="15dp"
-        android:bottomLeftRadius="15dp"
-        android:topLeftRadius="15dp"
-        android:topRightRadius="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+        <EditText
+            android:id="@+id/edtCPF"
+            style="@style/EditTextStyle"
+            android:layout_width="275dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="12dp"
+            android:background="#E2DBDB"
+            android:bottomLeftRadius="15dp"
+            android:bottomRightRadius="15dp"
+            android:hint="CPF"
+            android:textStyle="bold"
+            android:topLeftRadius="15dp"
+            android:topRightRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
-    <EditText
-        android:id="@+id/edtSenha"
-        style="@style/EditTextStyle"
-        android:layout_width="275dp"
-        android:layout_height="80dp"
-        android:layout_marginTop="12dp"
-        android:background="#E2DBDB"
-        android:text="Senha"
-        android:textStyle="bold"
-        android:bottomRightRadius="15dp"
-        android:bottomLeftRadius="15dp"
-        android:topLeftRadius="15dp"
-        android:topRightRadius="15dp"
-        app:layout_constraintTop_toBottomOf="@+id/edtCPF"
-        tools:layout_editor_absoluteX="68dp" />
+        <EditText
+            android:id="@+id/edtSenha"
+            style="@style/EditTextStyle"
+            android:layout_width="275dp"
+            android:layout_height="80dp"
+            android:layout_marginTop="8dp"
+            android:background="#E2DBDB"
+            android:bottomLeftRadius="15dp"
+            android:bottomRightRadius="15dp"
+            android:hint="Senha"
+            android:inputType="text|textPassword"
+            android:textStyle="bold"
+            android:topLeftRadius="15dp"
+            android:topRightRadius="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtCPF" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="262dp"
-        android:layout_height="76dp"
-        android:onClick="RegisterUser"
-        android:text="Cadastro"
-        app:backgroundTint="#5A161C"
-        app:cornerRadius="20dp"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="603dp" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="262dp"
+            android:layout_height="76dp"
+            android:layout_marginTop="36dp"
+            android:onClick="RegisterUser"
+            android:text="CADASTRAR"
+            app:backgroundTint="#5A161C"
+            app:cornerRadius="20dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
 
     <TextView
         android:id="@+id/textView7"
@@ -120,18 +126,6 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView7" />
 
-        <Button
-            android:id="@+id/button2"
-            android:layout_width="262dp"
-            android:layout_height="76dp"
-            android:layout_marginTop="24dp"
-            android:background="#9A1414"
-            android:onClick="RegisterUser"
-            android:text="Button"
-            app:backgroundTint="#9A1414"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/edtSenha" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </ScrollView>

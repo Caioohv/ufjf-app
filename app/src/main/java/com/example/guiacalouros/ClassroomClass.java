@@ -6,11 +6,26 @@ public class ClassroomClass {
     private String location;
     private String reference;
 
-    public ClassroomClass(int id, String type, String location, String reference) {
+    private  String codigo;
+
+
+    public ClassroomClass(int id, String type, String location, String reference, String codigo) {
         this.id = id;
         this.type = type;
         this.location = location;
         this.reference = reference;
+        this.codigo = codigo;
+    }
+
+    public ClassroomClass() {
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
     }
 
     public int getId() {

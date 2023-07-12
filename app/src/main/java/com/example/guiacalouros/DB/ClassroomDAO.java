@@ -23,7 +23,8 @@ public class ClassroomDAO extends SQLiteOpenHelper {
     public static final String TABLE_NAME = "guia_classroom";
     public static final String COLUMN_TYPE = "TYPE";
     public static final String COLUMN_LOCATION = "LOCATION";
-    public static final String COLUMN_REFERENCE = "REFERENCE ";
+    public static final String COLUMN_REFERENCE = "REFERENCE";
+    public static final String COLUMN_CODIGO = "CODIGO";
 
     public ClassroomDAO(@Nullable Context context) {
         super(context,"guia_ufjf_db",null ,1 );
@@ -33,7 +34,7 @@ public class ClassroomDAO extends SQLiteOpenHelper {
     @SuppressLint("SQLiteString")
     @Override
     public void onCreate(SQLiteDatabase db){
-        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_TYPE + " STRING, " + COLUMN_LOCATION + " STRING, " + COLUMN_REFERENCE + " STRING)" ;
+        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_TYPE + " STRING, " + COLUMN_LOCATION + " STRING, " + COLUMN_REFERENCE + " STRING," + COLUMN_REFERENCE + " CODIGO )" ;
         db.execSQL(createTableStatement);
     }
 
@@ -50,6 +51,7 @@ public class ClassroomDAO extends SQLiteOpenHelper {
         cv.put(COLUMN_TYPE, classroomClass.getType());
         cv.put(COLUMN_LOCATION, classroomClass.getLocation());
         cv.put(COLUMN_REFERENCE, classroomClass.getReference());
+        cv.put(COLUMN_CODIGO, classroomClass.getCodigo());
 
         long insert = db.insert(TABLE_NAME, null, cv);
         if(insert == -1)
@@ -74,8 +76,9 @@ public class ClassroomDAO extends SQLiteOpenHelper {
                 String type = cursor.getString(1);
                 String location = cursor.getString(2);
                 String reference = cursor.getString(3);
+                String codigo = cursor.getString(4);
 
-                ClassroomClass classroom = new ClassroomClass(classroomId, type, location, reference  );
+                ClassroomClass classroom = new ClassroomClass(classroomId, type, location, reference, codigo);
                 returnList.add(classroom );
 
             }while(cursor.moveToNext());

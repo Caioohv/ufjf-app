@@ -1,19 +1,22 @@
 package com.example.guiacalouros;
 
-public class GuiaUser {
+public class UserClass {
     private String name;
 
     private String cpf;
     private String email;
     private String password;
 
-    public GuiaUser() {
+    private boolean approved;
+
+    public UserClass() {
     }
-    public GuiaUser(String name, String cpf, String email, String password) {
+    public UserClass(String name, String cpf, String email, String password) {
         this.name = name;
         this.cpf = cpf;
         this.email = email;
         this.password = password;
+        this.approved = false;
     }
 
     public String getName() {
@@ -46,5 +49,9 @@ public class GuiaUser {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public boolean getApproved(){
+        return this.approved;
     }
 }

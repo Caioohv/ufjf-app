@@ -7,7 +7,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 
-public class InfoUfjf extends AppCompatActivity {
+public class InfoUfjfView extends AppCompatActivity {
 
 
     @Override

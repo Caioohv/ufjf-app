@@ -1,4 +1,4 @@
-package com.example.guiacalouros;
+package com.example.guiacalouros.DB;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
@@ -7,16 +7,19 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
+import com.example.guiacalouros.UserClass;
 
-public class DatabaseConnection extends SQLiteOpenHelper {
+
+public class UserDAO extends SQLiteOpenHelper {
 
     public static final String TABLE_NAME = "guia_user";
     public static final String COLUMN_CPF = "CPF";
     public static final String COLUMN_NAME = "NAME";
     public static final String COLUMN_PASSWORD = "PASSWORD";
     public static final String COLUMN_EMAIL = "EMAIL";
+    public static final String COLUMN_APPROVED = "APPROVED";
 
-    public DatabaseConnection(@Nullable Context context) {
+    public UserDAO(@Nullable Context context) {
         super(context,"guia_ufjf_db",null ,1 );
     }
 
@@ -24,7 +27,7 @@ public class DatabaseConnection extends SQLiteOpenHelper {
     @SuppressLint("SQLiteString")
     @Override
     public void onCreate(SQLiteDatabase db){
-        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CPF + " STRING, " + COLUMN_NAME + " STRING, " + COLUMN_PASSWORD + " STRING , " + COLUMN_EMAIL + " STRING) ";
+        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CPF + " STRING, " + COLUMN_NAME + " STRING, " + COLUMN_PASSWORD + " STRING , " + COLUMN_EMAIL + " STRING, " + COLUMN_APPROVED + " BOOL) ";
 
         db.execSQL(createTableStatement);
     }
@@ -35,14 +38,15 @@ public class DatabaseConnection extends SQLiteOpenHelper {
 
     }
 
-    public boolean addOne(GuiaUser guiaUser){
+    public boolean addUser(UserClass userClass){
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues cv = new ContentValues();
 
-        cv.put(COLUMN_CPF, guiaUser.getCpf());
-        cv.put(COLUMN_EMAIL, guiaUser.getEmail());
-        cv.put(COLUMN_NAME, guiaUser.getName());
-        cv.put(COLUMN_PASSWORD, guiaUser.getPassword());
+        cv.put(COLUMN_CPF, userClass.getCpf());
+        cv.put(COLUMN_EMAIL, userClass.getEmail());
+        cv.put(COLUMN_NAME, userClass.getName());
+        cv.put(COLUMN_PASSWORD, userClass.getPassword());
+//        cv.put(COLUMN_APPROVED, userClass.getApproved());
 
         long insert = db.insert(TABLE_NAME, null, cv);
         if(insert == -1)

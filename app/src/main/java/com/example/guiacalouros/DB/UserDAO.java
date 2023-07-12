@@ -2,12 +2,16 @@ package com.example.guiacalouros.DB;
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 import androidx.annotation.Nullable;
 
 import com.example.guiacalouros.UserClass;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class UserDAO extends SQLiteOpenHelper {
@@ -27,7 +31,7 @@ public class UserDAO extends SQLiteOpenHelper {
     @SuppressLint("SQLiteString")
     @Override
     public void onCreate(SQLiteDatabase db){
-        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CPF + " STRING, " + COLUMN_NAME + " STRING, " + COLUMN_PASSWORD + " STRING , " + COLUMN_EMAIL + " STRING, " + COLUMN_APPROVED + " BOOL) ";
+        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CPF + " STRING, " + COLUMN_NAME + " STRING, " + COLUMN_PASSWORD + " STRING , " + COLUMN_EMAIL + " STRING, " + COLUMN_APPROVED + " BOOLEAN) ";
 
         db.execSQL(createTableStatement);
     }
@@ -46,7 +50,7 @@ public class UserDAO extends SQLiteOpenHelper {
         cv.put(COLUMN_EMAIL, userClass.getEmail());
         cv.put(COLUMN_NAME, userClass.getName());
         cv.put(COLUMN_PASSWORD, userClass.getPassword());
-//        cv.put(COLUMN_APPROVED, userClass.getApproved());
+        cv.put(COLUMN_APPROVED, userClass.getApproved());
 
         long insert = db.insert(TABLE_NAME, null, cv);
         if(insert == -1)
@@ -54,5 +58,35 @@ public class UserDAO extends SQLiteOpenHelper {
 
 
         return true;
+    }
+
+    public List<UserClass> getEveryone(){
+        List<UserClass> returnList = new ArrayList<>();
+
+        //get data from database
+        String queryString = "SELECT * FROM " + TABLE_NAME;
+
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursor = db.rawQuery(queryString, null);
+        if(cursor.moveToFirst()){
+            do{
+                int userId = cursor.getInt(0);
+                String cpf = cursor.getString(1);
+                String email = cursor.getString(2);
+                String name = cursor.getString(3);
+                String password = cursor.getString(4);
+                boolean approved = cursor.getInt(4) == 1 ? true : false;
+
+                UserClass user = new UserClass(userId,name, cpf, email, password );
+                returnList.add(user);
+
+            }while(cursor.moveToNext());
+        }else{
+
+        }
+        cursor.close();
+        db.close();
+        return returnList;
     }
 }

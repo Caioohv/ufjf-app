@@ -1,17 +1,18 @@
 package com.example.guiacalouros;
 
 public class UserClass {
+
+    private int id;
     private String name;
 
     private String cpf;
     private String email;
     private String password;
 
-    private boolean approved;
+    private Boolean approved;
 
-    public UserClass() {
-    }
-    public UserClass(String name, String cpf, String email, String password) {
+    public UserClass(int id, String name, String cpf, String email, String password) {
+        this.id = id;
         this.name = name;
         this.cpf = cpf;
         this.email = email;
@@ -54,4 +55,6 @@ public class UserClass {
     public boolean getApproved(){
         return this.approved;
     }
+
+    public int getId(){return this.id; };
 }

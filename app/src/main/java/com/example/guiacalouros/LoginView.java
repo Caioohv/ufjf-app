@@ -1,5 +1,6 @@
 package com.example.guiacalouros;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -15,5 +16,9 @@ public class LoginView extends AppCompatActivity {
 
     public void login(View view){
 
+    }
+
+    public void redirectRegisterPage(View view){
+        this.startActivity(new Intent(this, RegisterView.class));
     }
 }

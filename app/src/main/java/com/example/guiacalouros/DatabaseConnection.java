@@ -1,30 +1,54 @@
 package com.example.guiacalouros;
-import android.os.AsyncTask;
-import android.os.StrictMode;
-import android.util.Log;
+import android.annotation.SuppressLint;
+import android.content.ContentValues;
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
+import android.database.sqlite.SQLiteOpenHelper;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import androidx.annotation.Nullable;
 
-public class DatabaseConnection {
-    private static final String TAG = "DatabaseConnection";
-    private static final String DB_URL = "jdbc:mysql://aws.connect.psdb.cloud/midivide?sslMode=VERIFY_IDENTITY";
-    private static final String USERNAME = "j26yw3dl8bl933lcd9lr";
-    private static final String PASSWORD = "pscale_pw_CoXM8dPxXzrfF2IL1QlbpMEf1JTnfkgk6IwrJrPEyym";
 
-    public void connect() {
-        Connection connection = null;
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            connection = DriverManager.getConnection(DB_URL, USERNAME, PASSWORD);
-        } catch (ClassNotFoundException e) {
-            Log.e(TAG, "Error loading JDBC driver", e);
-        } catch (SQLException e) {
-            Log.e(TAG, "Error connecting to the database", e);
-        }
+public class DatabaseConnection extends SQLiteOpenHelper {
 
+    public static final String TABLE_NAME = "guia_user";
+    public static final String COLUMN_CPF = "CPF";
+    public static final String COLUMN_NAME = "NAME";
+    public static final String COLUMN_PASSWORD = "PASSWORD";
+    public static final String COLUMN_EMAIL = "EMAIL";
+
+    public DatabaseConnection(@Nullable Context context) {
+        super(context,"guia_ufjf_db",null ,1 );
+    }
+
+    //é chamado na primeira vez que o banco é acessado. Cria o banco
+    @SuppressLint("SQLiteString")
+    @Override
+    public void onCreate(SQLiteDatabase db){
+        String createTableStatement = "CREATE TABLE " + TABLE_NAME + " (ID INTEGER PRIMARY KEY AUTOINCREMENT, " + COLUMN_CPF + " STRING, " + COLUMN_NAME + " STRING, " + COLUMN_PASSWORD + " STRING , " + COLUMN_EMAIL + " STRING) ";
+
+        db.execSQL(createTableStatement);
+    }
+
+    //method é chamado se o banco for atualizado. Previne que a aplicação quebre ao mudar a estrutura do banco
+    @Override
+    public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
+
+    }
+
+    public boolean addOne(GuiaUser guiaUser){
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues cv = new ContentValues();
+
+        cv.put(COLUMN_CPF, guiaUser.getCpf());
+        cv.put(COLUMN_EMAIL, guiaUser.getEmail());
+        cv.put(COLUMN_NAME, guiaUser.getName());
+        cv.put(COLUMN_PASSWORD, guiaUser.getPassword());
+
+        long insert = db.insert(TABLE_NAME, null, cv);
+        if(insert == -1)
+            return false;
+
+
+        return true;
     }
 }

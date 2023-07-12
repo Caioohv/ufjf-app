@@ -52,6 +52,7 @@
         android:id="@+id/button"
         android:layout_width="151dp"
         android:layout_height="127dp"
+        android:onClick="redirectRegisterPage"
         android:text="Grupos"
         app:backgroundTint="#9A1414"
         app:cornerRadius="10dp"

@@ -23,5 +23,9 @@ public class MainActivity extends AppCompatActivity {
         this.startActivity(new Intent(this,InfoUfjf.class));
     }
 
+    public void redirectRegisterPage(View view){
+        this.startActivity(new Intent(this, Register.class));
+    }
+
 
 }
